@@ -1,6 +1,7 @@
 // Book Class: Represents a Book
 class Lista {
-  constructor(idade, sexo, corOlhos, corCabelo) {
+  constructor(id, idade, sexo, corOlhos, corCabelo) {
+    this.id = id;
     this.idade = idade;
     this.sexo = sexo;
     this.corOlhos = corOlhos;
@@ -24,7 +25,7 @@ class UI {
     row.innerHTML = `
     <tbody>
       <tr>
-        <td>$</td>
+        <td>x</td>
         <td>${lista.idade}</td>
         <td>${lista.sexo}</td>
         <td>${lista.corOlhos}</td>
@@ -62,6 +63,10 @@ class UI {
   }
 }
 
+//autoincrement ID
+function generatorId(){
+
+}
 
 //get valueRadio
 function evalGroup() {
@@ -116,6 +121,8 @@ document.querySelector('#form-id').addEventListener('submit', (e) => {
   e.preventDefault();
 
   // Get form values
+  const id =  generatorId()
+
   const idade = document.querySelector('#idade').value;
   // const sexo = document.getElementById('#sexo').value;
   const sexo = document.querySelector('input[name=sexo]:checked').value;
