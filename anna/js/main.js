@@ -20,18 +20,17 @@ class UI {
     const list = document.querySelector('#Listar');
 
     const row = document.createElement('tr');
-    for (var i = 0, td; i < row.length; i++) {
-      td = document.createElement('td');
-      td.appendChild(document.createTextNode(i + 1));
-      row[i].insertBefore(td, row[i].firstChild);
-    }
+    
     row.innerHTML = `
-      <td>${row[i]}</td>
-      <td>${lista.idade}</td>
-      <td>${lista.sexo}</td>
-      <td>${lista.corOlhos}</td>
-      <td>${lista.corCabelo}</td>
-      <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    <tbody>
+      <tr>
+        <td>$</td>
+        <td>${lista.idade}</td>
+        <td>${lista.sexo}</td>
+        <td>${lista.corOlhos}</td>
+        <td>${lista.corCabelo}</td>
+      </tr>
+    </tbody>  
     `;
 
     list.appendChild(row);
@@ -62,6 +61,7 @@ class UI {
     document.querySelector('#corCabelo').value = '';
   }
 }
+
 
 //get valueRadio
 function evalGroup() {
