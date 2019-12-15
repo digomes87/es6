@@ -8,20 +8,8 @@ class Book {
 }
 // UI class
 class UI {
-  static displayBooks(){
-    const StoreBooks = [
-      {
-        title: 'Booke one',
-        author: 'Diego',
-        id: '1'
-      },
-      {
-        title: 'Book two',
-        author: 'Anna',
-        id: 2
-      }
-    ];
-    const books = StoreBooks;
+  static displayBooks() {
+    const books = Store.getBooks();
     books.forEach((book)=> UI.addBookToList(book));
   }
   static addBookToList(book){
