@@ -1,7 +1,6 @@
 // Book Class: Represents a Book
 class Lista {
-  constructor(id, idade, sexo, corOlhos, corCabelo) {
-    this.id = id;
+  constructor( idade, sexo, corOlhos, corCabelo) {
     this.idade = idade;
     this.sexo = sexo;
     this.corOlhos = corOlhos;
