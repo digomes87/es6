@@ -20,12 +20,17 @@ class UI {
     const list = document.querySelector('#Listar');
 
     const row = document.createElement('tr');
-
+    for (var i = 0, td; i < row.length; i++) {
+      td = document.createElement('td');
+      td.appendChild(document.createTextNode(i + 1));
+      row[i].insertBefore(td, row[i].firstChild);
+    }
     row.innerHTML = `
-      <td>${book.idade}</td>
-      <td>${book.sexo}</td>
-      <td>${book.corOlhos}</td>
-      <td>${book.corCabelo}</td>
+      <td>${row[i]}</td>
+      <td>${lista.idade}</td>
+      <td>${lista.sexo}</td>
+      <td>${lista.corOlhos}</td>
+      <td>${lista.corCabelo}</td>
       <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
     `;
 
@@ -52,7 +57,7 @@ class UI {
 
   static clearFields() {
     document.querySelector('#idade').value = '';
-    document.querySelector('#sexo').value =  '';
+    // document.querySelector('input[name=sexo]:checked') =  '';
     document.querySelector('#corOlhos').value = '';
     document.querySelector('#corCabelo').value = '';
   }
@@ -60,7 +65,7 @@ class UI {
 
 //get valueRadio
 function evalGroup() {
-  var s = document.form-id.sexo;
+  var s = document.form - id.sexo;
   for (var i = 0; i < s.length; i++) {
     if (s[i].checked)
       break;
@@ -103,7 +108,7 @@ class Store {
 }
 
 // Event: Display Books
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+document.addEventListener('DOMContentLoaded', UI.displayLista);
 
 // Event: Add a Book
 document.querySelector('#form-id').addEventListener('submit', (e) => {
@@ -114,12 +119,20 @@ document.querySelector('#form-id').addEventListener('submit', (e) => {
   const idade = document.querySelector('#idade').value;
   // const sexo = document.getElementById('#sexo').value;
   const sexo = document.querySelector('input[name=sexo]:checked').value;
-  const corOlhos = document.querySelector('#corOlhos').value;
-  const corCabelo = document.querySelector('#corCabelo').value;
+  console.log(sexo)
+  // const corOlhos = document.querySelector('#corOlhos').value;
+  var corOl = document.getElementById('select');
+  const corOlhos = select.options[corOl.selectedIndex].value
+  console.log(corOlhos)
+
+  var corC = document.getElementById('select1')
+  const corCabelo = select1.options[corC.selectedIndex].value
+  console.log(corCabelo)
+
 
   // Validate
   if (idade === '' || sexo === '' || corOlhos === '' || corCabelo === '') {
-    UI.showAlert('Please fill in all fields', 'danger');
+    UI.showAlert('Por favor Preencha todos os campos', 'danger');
   } else {
     // Instatiate book
     const lista = new Lista(idade, sexo, corOlhos, corCabelo);
