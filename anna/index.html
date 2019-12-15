@@ -1,0 +1,54 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Questionario</title>
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+    <body>
+        <div class="container">
+            <h1>Formulario!</h1>
+            <form id=form-id>
+                <div class="campo">
+                    <label for="idade">Idade: </label>
+                    <input type="text" id="idade" name="idade" style="width: 20em" value="" />
+                </div>
+                <div class="campo">
+                    <label>Sexo: </label>
+                    <label class="checkbox">
+                        <input type="radio" name="sexo"id="masculino" value="masculino"> Masculino
+                    </label>
+                    <label class="checkbox">
+                        <input type="radio" name="sexo" id="feminino" value="feminino"> Feminino
+                    </label>
+                </div>
+                <div class="campo">
+                    <label for="olho">Cor dos Olhos: </label>
+                    <select class="select" style="width: 20em"  id="select" name="select">
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                        <option value="castanho">Castanho</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="cabelo">Cor do Cabelo: </label>
+                    <select class="select" style="width: 20em"  id="select1" name="select1">
+                        <option value="castanho">Castanho</option>
+                        <option value="louro">Louro</option>
+                        <option value="ruivo">Ruivo</option>
+                        <option value="colorido">Colorido</option>
+                    </select>
+                </div>
+        
+                <div class="campo">
+                    <div>
+                        <button class="botao" name="salvar" type="submit">Salvar</button>
+                        <button class="botao" name="cancelar" type="submit">Cancelar</button>
+                    </div>
+                </div>
+                <table id = "Listar"></table>
+            </form>
+        </div>
+      <script src="js/main.js"></script>
+   </body>
+</html>
