@@ -93,18 +93,6 @@ class Store {
     listas.push(lista);
     localStorage.setItem('listas', JSON.stringify(listas));
   }
-
-  // static removeBook(isbn) {
-  //   const books = Store.getBooks();
-
-  //   books.forEach((book, index) => {
-  //     if(book.id === id) {
-  //       books.splice(index, 1);
-  //     }
-  //   });
-
-  //   localStorage.setItem('books', JSON.stringify(books));
-  // }
 }
 
 // Event: Display Books
